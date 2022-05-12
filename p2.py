@@ -8,3 +8,9 @@ def sorteia_pais(lista):
     for i in lista:
         nlista.append(i)
     return random.choice(nlista)
+
+def esta_na_lista(pais, lista):
+    for i in lista:
+        if i[0] == pais:
+            return True
+    return False
