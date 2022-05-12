@@ -21,7 +21,7 @@ def sorteia_pais(lista):
     return random.choice(nlista)
 
 def haversine(r,x,y,a,b):
-    return 2 * r * (math.asin((((math.sin((math.radians((a-x)/2))))*2) + ((math.cos(math.radians(x))*math.cos(math.radians(a))) * ((math.sin((math.radians((b-y)/2))))2)))*(1/2)))
+    return 2 * r * (math.asin((((math.sin((math.radians((a-x)/2))))**2) + ((math.cos(math.radians(x))*math.cos(math.radians(a))) * ((math.sin((math.radians((b-y)/2))))**2)))**(1/2)))
 
 def adiciona_em_ordem(a,b,l):
     n=0
@@ -65,8 +65,14 @@ r = random. choice(x)
 i = 20
 l = []
 a = 0
+letra = 'letras da capital: '
 dicas = ['DICAS: ']
+cor = 'Cores da bandeira: '
+restricao = []
+ncor =[]
+clr = True
 cnt = True
+letr = True
 ara = True
 pp = True
 listp = []
@@ -98,9 +104,19 @@ while i > 0:
             print('\n')
             dica = [[1, 'Cores da bandeira do país', 4], [2, 'Letras de sua capital',3], [3, 'Área',6], [4, 'População',5], [5, 'Continente',7], [0,'sem dica',0]]
             m = 0
+            for n in paises[r]['bandeira']:
+              if paises[r]['bandeira'][n] > m and f'{n}' not in ncor:
+                m = paises[r]['bandeira'][n]
+                cr = n
+        
+            if cr == 'outras':
+                clr = False
+
             print ('----------------------------------------')
-            print ('1. Cor da bandeira  - custa 4 tentativas')
-            print ('2. Letra da capital - custa 3 tentativas')
+            if clr == True:
+                print ('1. Cor da bandeira  - custa 4 tentativas')
+            if letr == True:
+                print ('2. Letra da capital - custa 3 tentativas')
             if ara == True:
                 print ('3. Área             - custa 6 tentativas')
             if pp == True:
@@ -113,10 +129,36 @@ while i > 0:
 
             b = input('\nescolha opção [0|1|2|3|4|5]: ')
             d = b.lower()
+
+        
+    
+            if b == '1' and clr == True:
+                m = 0
+                for n in paises[r]['bandeira']:
+                    if paises[r]['bandeira'][n] > m and f'{n}' not in ncor:
+                        m = paises[r]['bandeira'][n]
+                        cr = n
+                ncor. append(cr)
+                if f'{cor}' in dicas:
+                    index = dicas. index(f'{cor}')
+                    del dicas[index]
+                cor += f'{cr},'
+                i -= dica[0][2]  
+                dicas.append(f'{cor}')
+        
+            elif b == '2' and letr == True:
+                ltr = sorteia_letra(paises[r]['capital'], restricao)
+                restricao. append (ltr)
+                if f'{letra}' in dicas:
+                    index = dicas. index(f'{letra}')
+                    del dicas[index]
+                letra += '{0},'. format(ltr)
+                i -= dica[1][2]
+                dicas.append(f'{letra}')
       
             
           
-            if b == '3' and ara == True:
+            elif b == '3' and ara == True:
                 area = paises[r]['area']
                 ar = f'Área: {area}' 
                 dicas.append(ar)
