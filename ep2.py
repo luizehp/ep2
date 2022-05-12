@@ -6,4 +6,4 @@ with ('DADOS.json', 'r') as a:
     DADOS = a. read()
     DADOS = json.loads(DADOS)
 x = 0
-oi pini 
+print('Oi Pini')
