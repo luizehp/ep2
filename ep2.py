@@ -77,7 +77,7 @@ ara = True
 pp = True
 listp = []
 
-print('\n\n============================ ')
+print('\n\n ============================ ')
 print('|                            |')
 print('| Bem-vindo ao Insper países |')
 print('|                            |')
@@ -191,7 +191,50 @@ while i > 0:
             if i < dica[0][2]:
                 clr = False
             print (f'tentativas:{i}')
+
+
+
+    elif a in paises:
+          d = haversine (EARTH_RADIUS, paises[r]['geo']['latitude'], paises[r]['geo']['longitude'], paises[a]['geo']['latitude'], paises[a]['geo']['longitude'])
+          if l == []:
+              l. append ([a, d])
+          else:
+              l = adiciona_em_ordem(a,d,l)
+          i -= 1
+          print('\n')
+          for n in range (len(l)):
+            x = int(l[n][1])
+            x = ('{:,}'. format(x).replace(',','.'))
+            if int(l[n][1]) >= 10000:
+              print (f'{x} km -> {l[n][0]}')
+            elif int(l[n][1]) >= 2000:
+              print (f' {x} km -> {l[n][0]}')
+            elif int(l[n][1]) >= 1000:
+              print (f' {x} km -> {l[n][0]}')
+            else:
+              print (f'  {x} km -> {l[n][0]}')
+          print (f'tentativas: {i}')
+
+
+    elif a == 'inventario':
+        print (f'tentativas: {i}')
+        print('\n')
+        for n in range (len(dicas)):
+          print (dicas[n])
+        print('\n')
+        for n in range (len(l)):
+            if int(l[n][1]) >= 10000:
+                print (f'{x} km -> {l[n][0]}')
+            elif int(l[n][1]) >= 2000:
+                print (f' {x} km -> {l[n][0]}')
+            elif int(l[n][1]) >= 1000:
+                print (f' {x} km -> {l[n][0]}')
+            else:
+                print (f'  {x} km -> {l[n][0]}')
+
+    else:
+        print ('\npaís desconhecido')
+        print (f'tentativas: {i}')
     
 
 
-    
