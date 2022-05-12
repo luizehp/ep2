@@ -1,7 +1,5 @@
 import random 
 import math
+import dados
 EARTH_RADIUS = 6371
-import json
-with ('DADOS.json', 'r') as a:
-    DADOS = a. read()
-    DADOS = json.loads(DADOS)
+DADOS = dados.DADOS

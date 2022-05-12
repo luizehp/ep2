@@ -1,4 +1,4 @@
-{
+DADOS = {
     "asia": {
       "afeganistao": {
         "area": 652230,
