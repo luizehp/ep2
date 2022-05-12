@@ -77,11 +77,11 @@ ara = True
 pp = True
 listp = []
 
-print(f'\n\n============================ ')
+print('\n\n============================ ')
 print('|                            |')
 print('| Bem-vindo ao Insper países |')
 print('|                            |')
-print(f' ==== Design de Softare ==== \n\n')
+print(' ==== Design de Softare ==== \n\n')
 print(' Comandos:')
 print('     dica       - entra no mercado de dica')
 print('     desisto    - desiste da rodada')
@@ -191,3 +191,7 @@ while i > 0:
             if i < dica[0][2]:
                 clr = False
             print (f'tentativas:{i}')
+    
+
+
+    
