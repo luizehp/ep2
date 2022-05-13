@@ -261,9 +261,16 @@ while i > 0:
             print (f' {fg.green}{x} km -> {l[n][0]}{reset}')
           else:
             print (f'  {fg.green}{x} km -> {l[n][0]}{reset}')
+    
+    elif a == 'desisto':
+        print(f'\nSeu país era {r}')
+        i = 0
 
     else:
         print ('\npaís desconhecido')
         print (f'tentativas: {fg.pink}{i}{reset}')
+    
+    if i == 0:
+        print (f'\nVocê perdeu, o pais era {r}')
 
 
