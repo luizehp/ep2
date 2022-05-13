@@ -133,7 +133,7 @@ while continuar != 'n':
       while a in listp:
         print ('\nVocê ja tentou este país\n')
         a = input ('\npaís: ')
-      if a != 'dica':
+      if a != 'dica' and a != 'inventario':
         listp. append (a)
       if a == r:
         print ('GANHOU!')
@@ -288,6 +288,8 @@ while continuar != 'n':
           print (dicas[n])
         print('\n')
         for n in range (len(l)):
+          x = int(l[n][1])
+          x = ('{:,}'. format(x).replace(',','.'))
           if int(l[n][1]) >= 10000:
               print (f'{fg.red}{x} km -> {l[n][0]}{reset}')
           elif int(l[n][1]) >= 2000:
