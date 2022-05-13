@@ -269,16 +269,18 @@ while continuar != 'n':
       
 
       elif a == 'desisto':
-        print(f'\nSeu país era {r}')
-        continuar = input('Jogar novamente? [s|n] ')
-        if continuar == 'n':
-          print ('\nAté a próxima!')
-          break
-        if continuar == 's':
-          break
-        else:
-          continuar = 'n'
-          break
+        gr = input ('Tem certeza que quer desistir? [s|n] ')
+        if gr == 's':
+          print(f'\nSeu país era {r}')
+          continuar = input('Jogar novamente? [s|n] ')
+          if continuar == 'n':
+            print ('\nAté a próxima!')
+            break
+          if continuar == 's':
+            break
+          else:
+            continuar = 'n'
+            break
 
     
       elif a == 'inventario':
