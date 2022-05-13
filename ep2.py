@@ -4,6 +4,38 @@ EARTH_RADIUS = 6371
 import dados
 DADOS = dados.DADOS
 
+reset='\033[0m'
+bold='\033[01m'
+disable='\033[02m'
+underline='\033[04m'
+reverse='\033[07m'
+strikethrough='\033[09m'
+invisible='\033[08m'
+class fg:
+  black='\033[30m'
+  red='\033[31m'
+  green='\033[32m'
+  orange='\033[33m'
+  blue='\033[34m'
+  purple='\033[35m'
+  cyan='\033[36m'
+  lightgrey='\033[37m'
+  darkgrey='\033[90m'
+  lightred='\033[91m'
+  lightgreen='\033[92m'
+  yellow='\033[93m'
+  lightblue='\033[94m'
+  pink='\033[95m'
+  lightcyan='\033[96m'
+class bg:
+  black='\033[40m'
+  red='\033[41m'
+  green='\033[42m'
+  orange='\033[43m'
+  blue='\033[44m'
+  purple='\033[45m'
+  cyan='\033[46m'
+  lightgrey='\033[47m'
 
 
 def normaliza (a):
@@ -77,11 +109,11 @@ ara = True
 pp = True
 listp = []
 
-print('\n\n ============================ ')
+print(f'\n\n{fg.pink} ============================ ')
 print('|                            |')
 print('| Bem-vindo ao Insper países |')
 print('|                            |')
-print(' ==== Design de Softare ==== \n\n')
+print(f' ==== Design de Softare ==== {reset}\n\n')
 print(' Comandos:')
 print('     dica       - entra no mercado de dica')
 print('     desisto    - desiste da rodada')
@@ -190,7 +222,7 @@ while i > 0:
                 letr = False
             if i < dica[0][2]:
                 clr = False
-            print (f'tentativas:{i}')
+            print (f'tentativas: {fg.pink}{i}{reset}')
 
 
 
@@ -206,15 +238,13 @@ while i > 0:
             x = int(l[n][1])
             x = ('{:,}'. format(x).replace(',','.'))
             if int(l[n][1]) >= 10000:
-              print (f'{x} km -> {l[n][0]}')
+              print (f'{fg.red}{x} km -> {l[n][0]}{reset}')
             elif int(l[n][1]) >= 2000:
-              print (f' {x} km -> {l[n][0]}')
+              print (f' {fg.yellow}{x} km -> {l[n][0]}{reset}')
             elif int(l[n][1]) >= 1000:
-              print (f' {x} km -> {l[n][0]}')
+              print (f' {fg.green}{x} km -> {l[n][0]}{reset}')
             else:
-              print (f'  {x} km -> {l[n][0]}')
-          print (f'tentativas: {i}')
-
+              print (f'  {fg.green}{x} km -> {l[n][0]}{reset}')
 
     elif a == 'inventario':
         print (f'tentativas: {i}')
@@ -223,18 +253,17 @@ while i > 0:
           print (dicas[n])
         print('\n')
         for n in range (len(l)):
-            if int(l[n][1]) >= 10000:
-                print (f'{x} km -> {l[n][0]}')
-            elif int(l[n][1]) >= 2000:
-                print (f' {x} km -> {l[n][0]}')
-            elif int(l[n][1]) >= 1000:
-                print (f' {x} km -> {l[n][0]}')
-            else:
-                print (f'  {x} km -> {l[n][0]}')
+          if int(l[n][1]) >= 10000:
+              print (f'{fg.red}{x} km -> {l[n][0]}{reset}')
+          elif int(l[n][1]) >= 2000:
+            print (f' {fg.yellow}{x} km -> {l[n][0]}{reset}')
+          elif int(l[n][1]) >= 1000:
+            print (f' {fg.green}{x} km -> {l[n][0]}{reset}')
+          else:
+            print (f'  {fg.green}{x} km -> {l[n][0]}{reset}')
 
     else:
         print ('\npaís desconhecido')
-        print (f'tentativas: {i}')
-    
+        print (f'tentativas: {fg.pink}{i}{reset}')
 
 
